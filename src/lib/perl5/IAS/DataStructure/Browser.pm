@@ -4,6 +4,7 @@ package IAS::DataStructure::Browser;
 
 use JSON;
 use Hash::Merge::Simple;
+use Data::Dumper;
 
 our @JSON_TYPES = qw(
 	object
@@ -42,12 +43,21 @@ sub command_loop
 			chomp($command);
 
 		}
-		print "Command: $command\n";
+		# print "Command: $command\n";
 		$command =~ s/^\s*//;
 		$command =~ s/\s*$//;
 		
-
+		my @command_parts = split(/\s+/, $command, 2);
+		
+		$self->process_command(\@command_parts);
 		
 	}	
+}
+
+sub process_command
+{
+	my ($self, $command_parts_ar) = @_;
+	
+	print Dumper($command_parts_ar),$/;
 }
 1;
