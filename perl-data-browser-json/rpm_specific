@@ -1,0 +1,7 @@
+#Requires: 
+AutoReqProv: no 
+Summary: An attempt to make a general purpose data editor
+Group: Generic Group
+License: Generic License
+Vendor: Generic Vendor
+BuildArch: noarch
